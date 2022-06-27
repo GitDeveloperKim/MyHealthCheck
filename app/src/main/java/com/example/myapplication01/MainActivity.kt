@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.myapplication01.dao.User
+import com.example.myapplication01.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     lateinit var data1: String // lateinit + var // Long, Short, Double, Floate, Boolean, Byte 타입 불가
@@ -11,10 +12,29 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
+
+        // 바인딩 객체 획득
+        val binding = ActivityMainBinding.inflate(layoutInflater)
+
+        // 액티비티 화면 출력
+        setContentView(binding.root)
 
         var kimyoungseok = User("kimyougnseok", 80, 1.8)
         kimyoungseok.calculateBMI()
         Toast.makeText(this, "test world: " + kimyoungseok.bmi, Toast.LENGTH_SHORT).show()
+
+        // 뷰 객체 이용
+        binding.trainingButton.setOnClickListener{
+            Toast.makeText(this, "training btn ", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.calorieButton.setOnClickListener{
+            Toast.makeText(this, "calorie btn", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.timerButton.setOnClickListener{
+            Toast.makeText(this, "timer btn", Toast.LENGTH_SHORT).show()
+        }
     }
 }
