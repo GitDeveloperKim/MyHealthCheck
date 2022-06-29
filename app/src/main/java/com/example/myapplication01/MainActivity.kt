@@ -1,5 +1,6 @@
 package com.example.myapplication01
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -37,6 +38,8 @@ class MainActivity : AppCompatActivity() {
 
         binding.timerButton.setOnClickListener{
             Toast.makeText(this, "timer btn", Toast.LENGTH_SHORT).show()
+            val intent: Intent = Intent(this, TimerActivity::class.java)
+            startActivity(intent)
         }
     }
 

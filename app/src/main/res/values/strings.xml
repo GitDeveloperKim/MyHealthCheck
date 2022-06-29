@@ -3,4 +3,7 @@
     <string name="training">train</string>
     <string name="calorie">calcorie</string>
     <string name="timer">timer</string>
+    <string name="health_item">health list</string>
+    <string name="health_detail">health name</string>
+    <string name="title_activity_timer">TimerActivity</string>
 </resources>
