@@ -2,6 +2,8 @@ package com.example.myapplication01
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.KeyEvent
 import android.widget.Toast
 import com.example.myapplication01.dao.User
 import com.example.myapplication01.databinding.ActivityMainBinding
@@ -36,5 +38,14 @@ class MainActivity : AppCompatActivity() {
         binding.timerButton.setOnClickListener{
             Toast.makeText(this, "timer btn", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        when (keyCode) {
+            KeyEvent.KEYCODE_BACK -> Log.d("kkang", "back button click")
+            KeyEvent.KEYCODE_VOLUME_UP -> Log.d("kkang", "volume up button click")
+            KeyEvent.KEYCODE_VOLUME_DOWN -> Log.d("kkang", "volume down button click")
+        }
+        return super.onKeyDown(keyCode, event)
     }
 }
