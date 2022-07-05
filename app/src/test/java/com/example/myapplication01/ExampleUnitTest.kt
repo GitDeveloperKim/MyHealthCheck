@@ -1,5 +1,6 @@
 package com.example.myapplication01
 
+import com.example.myapplication01.dao.Sex
 import com.example.myapplication01.dao.User
 import org.junit.Test
 
@@ -24,20 +25,20 @@ class ExampleUnitTest {
 
     @Test
     fun user_height_is_correct() {
-        var kimyoungseok = User("kimyoungseok", 80, 1.8)
+        var kimyoungseok = User("kimyoungseok", 80, 1.8, Sex.MALE)
         assertEquals(80, kimyoungseok.weight)
     }
 
     @Test
     fun user_weight_is_correct() {
-        var kimyoungseok = User("kimyoungseok", 80, 1.8)
+        var kimyoungseok = User("kimyoungseok", 80, 1.8, Sex.MALE)
         assertEquals(1.8, kimyoungseok.height,0.1)
     }
 
     @Test
     fun user_bmi_is_correct() {
         // given
-        var kimyoungseok = User("kimyoungseok", 80, 1.8)
+        var kimyoungseok = User("kimyoungseok", 80, 1.8, Sex.MALE)
         // when
         kimyoungseok.calculateBMI()
         // then

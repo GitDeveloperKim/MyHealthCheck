@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.KeyEvent
 import android.widget.Toast
+import com.example.myapplication01.dao.Sex
 import com.example.myapplication01.dao.User
 import com.example.myapplication01.databinding.ActivityMainBinding
 
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         // 액티비티 화면 출력
         setContentView(binding.root)
 
-        var kimyoungseok = User("kimyougnseok", 80, 1.8)
+        var kimyoungseok = User("kimyougnseok", 80, 1.8, Sex.MALE)
         kimyoungseok.calculateBMI()
         Toast.makeText(this, "test world: " + kimyoungseok.bmi, Toast.LENGTH_SHORT).show()
 
