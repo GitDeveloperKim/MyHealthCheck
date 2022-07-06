@@ -1,4 +1,4 @@
-package com.example.myapplication01.dao
+package com.example.myapplication01.vo
 
 enum class Sex {
     MALE, FEMALE
