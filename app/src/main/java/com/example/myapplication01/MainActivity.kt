@@ -6,8 +6,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.KeyEvent
 import android.widget.Toast
-import com.example.myapplication01.dao.Sex
-import com.example.myapplication01.dao.User
+import com.example.myapplication01.vo.Sex
+import com.example.myapplication01.vo.User
 import com.example.myapplication01.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -31,6 +31,8 @@ class MainActivity : AppCompatActivity() {
         // 뷰 객체 이용
         binding.trainingButton.setOnClickListener{
             Toast.makeText(this, "training btn ", Toast.LENGTH_SHORT).show()
+            val intent: Intent = Intent(this, HealthActivity::class.java)
+            startActivity(intent)
         }
 
         binding.calorieButton.setOnClickListener{
