@@ -1,7 +1,7 @@
 package com.example.myapplication01
 
-import com.example.myapplication01.dao.Sex
-import com.example.myapplication01.dao.User
+import com.example.myapplication01.vo.Sex
+import com.example.myapplication01.vo.User
 import org.junit.Test
 
 import org.junit.Assert.*
