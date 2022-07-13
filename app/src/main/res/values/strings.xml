@@ -13,4 +13,7 @@ Oh, did you not see this article, like, the day it came out? WELL GUESS WHAT. ha
 The first helps you build the body you want and sustain your health long-term. The second leaves you poisoned with gom jabbar.
 Figuratively, of course.
 Okay, on with it!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_fragment">Hello fragment</string>
+    <string name="health_fragment">Hello Health people</string>
 </resources>

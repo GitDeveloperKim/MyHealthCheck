@@ -17,7 +17,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
         // 바인딩 객체 획득
         val binding = ActivityMainBinding.inflate(layoutInflater)
 
@@ -31,12 +30,16 @@ class MainActivity : AppCompatActivity() {
         // 뷰 객체 이용
         binding.trainingButton.setOnClickListener{
             Toast.makeText(this, "training btn ", Toast.LENGTH_SHORT).show()
-            val intent: Intent = Intent(this, HealthActivity::class.java)
-            startActivity(intent)
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_view, MainFragment())
+                .commit()
         }
 
         binding.calorieButton.setOnClickListener{
             Toast.makeText(this, "calorie btn", Toast.LENGTH_SHORT).show()
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_view, HealthFragment())
+                .commit()
         }
 
         binding.timerButton.setOnClickListener{
