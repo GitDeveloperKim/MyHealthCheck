@@ -3,8 +3,8 @@
     <string name="training">train</string>
     <string name="calorie">calcorie</string>
     <string name="timer">timer</string>
-    <string name="health_item">health list</string>
-    <string name="health_detail">health name</string>
+    <string name="health_name">health name</string>
+    <string name="health_description">health description</string>
     <string name="title_activity_timer">TimerActivity</string>
     <string name="health_article">DOWN WITH trendy diets!
 They’re bland, they’re boring, and they don’t really work. Plus, all they talk about is rules, rules, rules. Who likes being told what to do all the time? What are diets, anyway, your mom?
