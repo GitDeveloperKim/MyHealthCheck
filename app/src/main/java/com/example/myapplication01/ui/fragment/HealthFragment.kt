@@ -1,4 +1,4 @@
-package com.example.myapplication01
+package com.example.myapplication01.ui.fragment
 
 import android.content.Context
 import android.os.Bundle
@@ -6,14 +6,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.myapplication01.ui.activity.MainActivity
+import com.example.myapplication01.R
 import com.example.myapplication01.ui.adapter.HealthAdapter
-import com.example.myapplication01.vo.HealthItem
 import kotlinx.android.synthetic.main.fragment_health.*
 
 class HealthFragment : Fragment() {
     private var myItems = mutableListOf<String>()
-    lateinit var healthActivity:MainActivity
+    lateinit var healthActivity: MainActivity
     lateinit var healthAdapter: HealthAdapter
 
 
@@ -43,13 +43,8 @@ class HealthFragment : Fragment() {
             add("벤치프레스")
 
             healthAdapter = HealthAdapter(myItems)
-            //recycler_view.layoutManager = LinearLayoutManager(healthActivity)
             recycler_view.adapter = healthAdapter
             healthAdapter.notifyDataSetChanged()
-            //healthAdapter.replaceData(myItems)
         }
-
-
-
     }
 }

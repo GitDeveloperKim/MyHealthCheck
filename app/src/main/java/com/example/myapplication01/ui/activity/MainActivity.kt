@@ -1,4 +1,4 @@
-package com.example.myapplication01
+package com.example.myapplication01.ui.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,9 +6,12 @@ import android.os.Bundle
 import android.util.Log
 import android.view.KeyEvent
 import android.widget.Toast
+import com.example.myapplication01.ui.fragment.MainFragment
+import com.example.myapplication01.R
 import com.example.myapplication01.vo.Sex
 import com.example.myapplication01.vo.User
 import com.example.myapplication01.databinding.ActivityMainBinding
+import com.example.myapplication01.ui.fragment.HealthFragment
 
 class MainActivity : AppCompatActivity() {
     lateinit var data1: String // lateinit + var // Long, Short, Double, Floate, Boolean, Byte 타입 불가
@@ -31,14 +34,20 @@ class MainActivity : AppCompatActivity() {
         binding.trainingButton.setOnClickListener{
             Toast.makeText(this, "training btn ", Toast.LENGTH_SHORT).show()
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_view, MainFragment())
+                .replace(
+                    R.id.fragment_view,
+                    MainFragment()
+                )
                 .commit()
         }
 
         binding.calorieButton.setOnClickListener{
             Toast.makeText(this, "calorie btn", Toast.LENGTH_SHORT).show()
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_view, HealthFragment())
+                .replace(
+                    R.id.fragment_view,
+                    HealthFragment()
+                )
                 .commit()
         }
 
