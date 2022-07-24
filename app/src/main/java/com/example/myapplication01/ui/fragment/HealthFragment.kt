@@ -19,7 +19,7 @@ class HealthFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        healthActivity = context as MainActivity
+        healthActivity = context as MainActivity // 자료형 변환 연산자 (from) as (to)
     }
 
     override fun onCreateView(
@@ -33,14 +33,14 @@ class HealthFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-
+        // 이 함수를 호출한 객체를, 이어지는 함수 블록의 리시버로 전달
         myItems.apply {
             add("벤치프레스")
-            add("벤치프레스")
-            add("벤치프레스")
-            add("벤치프레스")
-            add("벤치프레스")
-            add("벤치프레스")
+            add("렛풀다운")
+            add("스쿼트")
+            add("데드리프트")
+            add("어깨")
+            add("이두근")
 
             healthAdapter = HealthAdapter(myItems)
             recycler_view.adapter = healthAdapter

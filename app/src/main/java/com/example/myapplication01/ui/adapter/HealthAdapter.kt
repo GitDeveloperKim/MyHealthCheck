@@ -18,7 +18,7 @@ class HealthAdapter (val healthItems: MutableList<String>):
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflateView = LayoutInflater.from(parent.context)
             .inflate(R.layout.health_item, parent, false)
-        return HealthAdapter.ViewHolder(inflateView)
+        return ViewHolder(inflateView)
     }
 
     // 뷰 홀더의 뷰에 데이터를 출력하려고 자동으로 호출
