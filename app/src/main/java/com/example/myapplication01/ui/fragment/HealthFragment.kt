@@ -9,10 +9,11 @@ import android.view.ViewGroup
 import com.example.myapplication01.ui.activity.MainActivity
 import com.example.myapplication01.R
 import com.example.myapplication01.ui.adapter.HealthAdapter
+import com.example.myapplication01.vo.HealthItem
 import kotlinx.android.synthetic.main.fragment_health.*
 
 class HealthFragment : Fragment() {
-    private var myItems = mutableListOf<String>()
+    private var myItems = mutableListOf<HealthItem>()
     lateinit var healthActivity: MainActivity
     lateinit var healthAdapter: HealthAdapter
 
@@ -35,12 +36,19 @@ class HealthFragment : Fragment() {
 
         // 이 함수를 호출한 객체를, 이어지는 함수 블록의 리시버로 전달
         myItems.apply {
-            add("벤치프레스")
-            add("렛풀다운")
-            add("스쿼트")
-            add("데드리프트")
-            add("어깨")
-            add("이두근")
+            add(HealthItem(healthImage = R.drawable.ic_muscle_chest_64, healthName = "벤치프레스", healthDescription = "가슴운동"))
+            add(HealthItem(healthImage = R.drawable.ic_muscle_quadriceps_64, healthName = "스쿼트", healthDescription = "다리운동"))
+            add(HealthItem(healthImage = R.drawable.ic_muscle_back_64, healthName = "데드리프트", healthDescription = "등운동"))
+            add(HealthItem(healthImage = R.drawable.ic_muscle_back_64, healthName = "렛풀다운", healthDescription = "등운동"))
+            add(HealthItem(healthImage = R.drawable.ic_muscle_biceps_64, healthName = "아령들기", healthDescription = "이두근 발달"))
+            add(HealthItem(healthImage = R.drawable.ic_muscle_biceps_64, healthName = "아령들기", healthDescription = "이두근 발달"))
+            add(HealthItem(healthImage = R.drawable.ic_muscle_biceps_64, healthName = "아령들기", healthDescription = "이두근 발달"))
+            add(HealthItem(healthImage = R.drawable.ic_muscle_biceps_64, healthName = "아령들기", healthDescription = "이두근 발달"))
+            add(HealthItem(healthImage = R.drawable.ic_muscle_biceps_64, healthName = "아령들기", healthDescription = "이두근 발달"))
+            add(HealthItem(healthImage = R.drawable.ic_muscle_biceps_64, healthName = "아령들기", healthDescription = "이두근 발달"))
+            add(HealthItem(healthImage = R.drawable.ic_muscle_biceps_64, healthName = "아령들기", healthDescription = "이두근 발달"))
+            add(HealthItem(healthImage = R.drawable.ic_muscle_biceps_64, healthName = "아령들기", healthDescription = "이두근 발달"))
+            add(HealthItem(healthImage = R.drawable.ic_muscle_biceps_64, healthName = "아령들기", healthDescription = "이두근 발달"))
 
             healthAdapter = HealthAdapter(myItems)
             recycler_view.adapter = healthAdapter

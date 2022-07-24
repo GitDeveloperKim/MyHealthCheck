@@ -5,10 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication01.R
+import com.example.myapplication01.vo.HealthItem
 
 import kotlinx.android.synthetic.main.health_item.view.*
 
-class HealthAdapter (val healthItems: MutableList<String>):
+class HealthAdapter (val healthItems: MutableList<HealthItem>):
     RecyclerView.Adapter<HealthAdapter.ViewHolder>()
 {
     //var healthItems = mutableListOf<String>() // todo image link, string, string 으로 구성된 클래스로 변경 필요
@@ -28,8 +29,10 @@ class HealthAdapter (val healthItems: MutableList<String>):
 
     // 항목 개수를 판단하려고 자동으로 호출
     class ViewHolder(var view: View): RecyclerView.ViewHolder(view) {
-        fun bind(item:String) {
-            view.health_name.text = item
+        fun bind(item:HealthItem) {
+            view.health_image.setImageResource(item.healthImage)
+            view.health_name.text = item.healthName
+            view.health_description.text = item.healthDescription
         }
     }
 }
