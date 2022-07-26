@@ -11,6 +11,14 @@
         android:gravity="center_horizontal"
         android:textSize="60dp" />
 
+    <ImageView
+        android:id="@+id/alarm_clock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chronometer"
+        android:src="@drawable/ic_alarm_clock_256"
+        android:layout_centerInParent="true"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

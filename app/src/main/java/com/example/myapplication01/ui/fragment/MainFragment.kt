@@ -5,7 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.example.myapplication01.R
+import com.example.myapplication01.databinding.ActivityTimerBinding
+import com.example.myapplication01.databinding.FragmentMainBinding
+import com.example.myapplication01.vo.Sex
+import com.example.myapplication01.vo.User
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +26,7 @@ class MainFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    lateinit var binding: FragmentMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,11 +37,36 @@ class MainFragment : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        binding = FragmentMainBinding.inflate(inflater, container, false)
+
+
+        var view = binding.root
+        return view
+    }
+
+    override fun onResume() {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_main, container, false)
+        var kimyoungseok = User("kimyougnseok", 80, 1.8, Sex.MALE)
+        kimyoungseok.calculateBMI()
+        Toast.makeText(context, "test world: " + kimyoungseok.bmi, Toast.LENGTH_SHORT).show()
+        binding.userName.text = kimyoungseok.name
+        binding.userHeight.text = kimyoungseok.height.toString()
+        binding.userWeight.text = kimyoungseok.weight.toString()
+        binding.userBMI.text = kimyoungseok.bmi.toString()
+
+
+
+        super.onResume()
+
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+
     }
 
     companion object {

@@ -26,10 +26,6 @@ class MainActivity : AppCompatActivity() {
         // 액티비티 화면 출력
         setContentView(binding.root)
 
-        var kimyoungseok = User("kimyougnseok", 80, 1.8, Sex.MALE)
-        kimyoungseok.calculateBMI()
-        Toast.makeText(this, "test world: " + kimyoungseok.bmi, Toast.LENGTH_SHORT).show()
-
         // 뷰 객체 이용
         binding.trainingButton.setOnClickListener{
             Toast.makeText(this, "training btn ", Toast.LENGTH_SHORT).show()
