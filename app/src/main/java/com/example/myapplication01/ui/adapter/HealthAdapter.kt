@@ -1,11 +1,15 @@
 package com.example.myapplication01.ui.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication01.R
+import com.example.myapplication01.ui.activity.HealthActivity
+import com.example.myapplication01.ui.activity.TimerActivity
 import com.example.myapplication01.vo.HealthItem
 
 import kotlinx.android.synthetic.main.health_item.view.*
@@ -26,7 +30,11 @@ class HealthAdapter (val healthItems: MutableList<HealthItem>):
     // 뷰 홀더의 뷰에 데이터를 출력하려고 자동으로 호출
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val listener = View.OnClickListener {
-            Toast.makeText(it.context, healthItems[position].healthName, Toast.LENGTH_SHORT).show()
+           // Toast.makeText(it.context, healthItems[position].healthName, Toast.LENGTH_SHORT).show()
+
+            val intent: Intent = Intent(it.context, HealthActivity::class.java)
+            intent.putExtra("name", healthItems[position].healthName)
+            it.context.startActivity(intent)
         }
         holder.bind(listener, healthItems[position])
     }
