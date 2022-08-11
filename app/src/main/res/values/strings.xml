@@ -16,4 +16,7 @@ Okay, on with it!</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_fragment">Hello fragment</string>
     <string name="health_fragment">Hello Health people</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="health_enrollment_fragment">tab1</string>
+    <string name="diet_enrollment_fragment">tab2</string>
 </resources>
