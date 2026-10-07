@@ -4,15 +4,10 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myapplication01.R
+import com.example.myapplication01.databinding.HealthItemBinding
 import com.example.myapplication01.ui.activity.HealthActivity
-import com.example.myapplication01.ui.activity.TimerActivity
 import com.example.myapplication01.vo.HealthItem
-
-import kotlinx.android.synthetic.main.health_item.view.*
 
 class HealthAdapter (val healthItems: MutableList<HealthItem>):
     RecyclerView.Adapter<HealthAdapter.ViewHolder>()
@@ -22,9 +17,10 @@ class HealthAdapter (val healthItems: MutableList<HealthItem>):
 
     // 항목의 뷰를 가지는 뷰 홀더를 준비하려고 자동으로 호출
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val inflateView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.health_item, parent, false)
-        return ViewHolder(inflateView)
+        val binding = HealthItemBinding.inflate(
+            LayoutInflater.from(parent.context), parent, false
+        )
+        return ViewHolder(binding)
     }
 
     // 뷰 홀더의 뷰에 데이터를 출력하려고 자동으로 호출
@@ -40,12 +36,12 @@ class HealthAdapter (val healthItems: MutableList<HealthItem>):
     }
 
     // 항목 개수를 판단하려고 자동으로 호출
-    class ViewHolder(var view: View): RecyclerView.ViewHolder(view) {
-        fun bind(listener: View.OnClickListener, item:HealthItem) {
-            view.health_image.setImageResource(item.healthImage)
-            view.health_name.text = item.healthName
-            view.health_description.text = item.healthDescription
-            view.setOnClickListener(listener)
+    class ViewHolder(private val binding: HealthItemBinding): RecyclerView.ViewHolder(binding.root) {
+        fun bind(listener: View.OnClickListener, item: HealthItem) {
+            binding.healthImage.setImageResource(item.healthImage)
+            binding.healthName.text = item.healthName
+            binding.healthDescription.text = item.healthDescription
+            binding.root.setOnClickListener(listener)
         }
     }
 }

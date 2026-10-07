@@ -8,14 +8,15 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.myapplication01.ui.activity.MainActivity
 import com.example.myapplication01.R
+import com.example.myapplication01.databinding.FragmentHealthBinding
 import com.example.myapplication01.ui.adapter.HealthAdapter
 import com.example.myapplication01.vo.HealthItem
-import kotlinx.android.synthetic.main.fragment_health.*
 
 class HealthFragment : Fragment() {
     private var myItems = mutableListOf<HealthItem>()
     lateinit var healthActivity: MainActivity
     lateinit var healthAdapter: HealthAdapter
+    private var binding: FragmentHealthBinding? = null
 
 
     override fun onAttach(context: Context) {
@@ -28,7 +29,13 @@ class HealthFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_health, container, false)
+        binding = FragmentHealthBinding.inflate(inflater, container, false)
+        return binding?.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -51,7 +58,7 @@ class HealthFragment : Fragment() {
             add(HealthItem(healthImage = R.drawable.ic_muscle_biceps_64, healthName = "아령들기", healthDescription = "이두근 발달"))
 
             healthAdapter = HealthAdapter(myItems)
-            recycler_view.adapter = healthAdapter
+            binding?.recyclerView?.adapter = healthAdapter
             healthAdapter.notifyDataSetChanged()
         }
     }
