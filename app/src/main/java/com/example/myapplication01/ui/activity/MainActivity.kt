@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.KeyEvent
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import com.example.myapplication01.ui.fragment.MainFragment
 import com.example.myapplication01.R
@@ -12,6 +14,11 @@ import com.example.myapplication01.vo.Sex
 import com.example.myapplication01.vo.User
 import com.example.myapplication01.databinding.ActivityMainBinding
 import com.example.myapplication01.ui.fragment.HealthFragment
+import com.example.myapplication01.util.PreferenceManager
+import androidx.credentials.ClearCredentialStateRequest
+import androidx.credentials.CredentialManager
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
     lateinit var data1: String // lateinit + var // Long, Short, Double, Floate, Boolean, Byte 타입 불가
@@ -25,6 +32,9 @@ class MainActivity : AppCompatActivity() {
 
         // 액티비티 화면 출력
         setContentView(binding.root)
+
+        // 로그인한 사용자 이름을 타이틀에 표시
+        PreferenceManager.getName(this)?.let { title = it }
 
         // 뷰 객체 이용
         binding.trainingButton.setOnClickListener{
@@ -51,6 +61,34 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "timer btn", Toast.LENGTH_SHORT).show()
             val intent: Intent = Intent(this, TimerActivity::class.java)
             startActivity(intent)
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.action_logout) {
+            logout()
+            return true
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun logout() {
+        lifecycleScope.launch {
+            try {
+                // Credential Manager 에 저장된 로그인 상태 초기화
+                CredentialManager.create(this@MainActivity)
+                    .clearCredentialState(ClearCredentialStateRequest())
+            } catch (e: Exception) {
+                Log.e("MainActivity", "clearCredentialState 실패", e)
+            }
+            PreferenceManager.clear(this@MainActivity)
+            startActivity(Intent(this@MainActivity, LoginActivity::class.java))
+            finish()
         }
     }
 

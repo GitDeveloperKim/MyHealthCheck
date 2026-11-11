@@ -19,4 +19,11 @@ Okay, on with it!</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="health_enrollment_fragment">tab1</string>
     <string name="diet_enrollment_fragment">tab2</string>
+
+    <!-- Google 로그인 -->
+    <!-- Google Cloud Console > API 및 서비스 > 사용자 인증 정보 에서 만든 "웹 애플리케이션" 유형 OAuth 클라이언트 ID -->
+    <string name="default_web_client_id" translatable="false">550889777900-0kf4mudoochapspibblas4mn1gneptsp.apps.googleusercontent.com</string>
+    <string name="google_sign_in">Google 계정으로 로그인</string>
+    <string name="login_title">MyHealthCheck</string>
+    <string name="logout">로그아웃</string>
 </resources>
