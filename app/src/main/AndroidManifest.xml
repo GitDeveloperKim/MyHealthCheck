@@ -17,6 +17,10 @@
             android:name=".ui.activity.MainActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.activity.ProfileSetupActivity"
+            android:exported="false"
+            android:label="@string/profile_title" />
+        <activity
             android:name=".ui.activity.LoginActivity"
             android:exported="true"
             android:theme="@style/AppTheme.NoActionBar">

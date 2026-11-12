@@ -26,4 +26,18 @@ Okay, on with it!</string>
     <string name="google_sign_in">Google 계정으로 로그인</string>
     <string name="login_title">MyHealthCheck</string>
     <string name="logout">로그아웃</string>
+
+    <!-- 회원 정보 입력 -->
+    <string name="profile_title">회원 정보 입력</string>
+    <string name="profile_greeting">%1$s 님, 반갑습니다!</string>
+    <string name="profile_greeting_default">반갑습니다!</string>
+    <string name="profile_description">맞춤 건강 관리를 위해 기본 정보를 입력해 주세요.
+처음 한 번만 입력하면 됩니다.</string>
+    <string name="profile_age">나이 (세)</string>
+    <string name="profile_height">키 (cm)</string>
+    <string name="profile_weight">몸무게 (kg)</string>
+    <string name="profile_sex">성별</string>
+    <string name="profile_male">남성</string>
+    <string name="profile_female">여성</string>
+    <string name="profile_save">저장하고 시작하기</string>
 </resources>

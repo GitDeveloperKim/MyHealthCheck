@@ -29,9 +29,9 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // 이미 로그인되어 있으면 바로 메인으로
+        // 이미 로그인되어 있으면 다음 화면으로
         if (PreferenceManager.isLoggedIn(this)) {
-            goToMain()
+            goToNext()
             return
         }
 
@@ -88,7 +88,7 @@ class LoginActivity : AppCompatActivity() {
                     photoUrl = googleCredential.profilePictureUri?.toString()
                 )
                 Toast.makeText(this, "${googleCredential.displayName ?: googleCredential.id} 님 환영합니다", Toast.LENGTH_SHORT).show()
-                goToMain()
+                goToNext()
             } catch (e: GoogleIdTokenParsingException) {
                 Log.e(TAG, "ID 토큰 파싱 실패", e)
                 Toast.makeText(this, "로그인 정보를 읽을 수 없습니다", Toast.LENGTH_SHORT).show()
@@ -103,8 +103,14 @@ class LoginActivity : AppCompatActivity() {
         binding.progressBar.visibility = if (loading) View.VISIBLE else View.GONE
     }
 
-    private fun goToMain() {
-        startActivity(Intent(this, MainActivity::class.java))
+    /** 첫 로그인(신체 정보 미입력)이면 입력 화면으로, 아니면 메인으로 이동 */
+    private fun goToNext() {
+        val next = if (PreferenceManager.isProfileCompleted(this)) {
+            MainActivity::class.java
+        } else {
+            ProfileSetupActivity::class.java
+        }
+        startActivity(Intent(this, next))
         finish()
     }
 
