@@ -42,26 +42,48 @@
                 android:id="@+id/userName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/app_name"
-                android:layout_gravity="center_horizontal"/>
+                android:layout_gravity="center_horizontal"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                tools:text="홍길동" />
             <TextView
-                android:id="@+id/userWeight"
+                android:id="@+id/userEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/app_name"
-                android:layout_gravity="center_horizontal"/>
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"
+                tools:text="user@gmail.com" />
+            <TextView
+                android:id="@+id/userSexAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                tools:text="남성 · 30세" />
             <TextView
                 android:id="@+id/userHeight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/app_name"
-                android:layout_gravity="center_horizontal"/>
+                android:layout_gravity="center_horizontal"
+                tools:text="키: 180.0 cm" />
+            <TextView
+                android:id="@+id/userWeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                tools:text="몸무게: 80.0 kg" />
             <TextView
                 android:id="@+id/userBMI"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/app_name"
-                android:layout_gravity="center_horizontal"/>
+                android:layout_gravity="center_horizontal"
+                tools:text="BMI: 24.7" />
+            <Button
+                android:id="@+id/editProfileButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:text="@string/profile_edit" />
         </LinearLayout>
     </FrameLayout>
 

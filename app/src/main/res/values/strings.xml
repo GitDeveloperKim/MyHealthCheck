@@ -40,4 +40,18 @@ Okay, on with it!</string>
     <string name="profile_male">남성</string>
     <string name="profile_female">여성</string>
     <string name="profile_save">저장하고 시작하기</string>
+
+    <!-- 프로필 화면 -->
+    <string name="profile_unknown_name">이름 없음</string>
+    <string name="profile_sex_age">%1$s · %2$d세</string>
+    <string name="profile_height_value">키: %1$.1f cm</string>
+    <string name="profile_weight_value">몸무게: %1$.1f kg</string>
+    <string name="profile_bmi_value">BMI: %1$.1f</string>
+    <string name="profile_not_set">-</string>
+    <string name="profile_edit">정보 수정</string>
+    <string name="profile_edit_title">회원 정보 수정</string>
+    <string name="profile_edit_description">변경할 정보를 입력해 주세요.
+BMI 는 키와 몸무게로 자동 계산됩니다.</string>
+    <string name="profile_edit_save">저장</string>
+    <string name="profile_edit_saved">회원 정보가 수정되었습니다</string>
 </resources>
